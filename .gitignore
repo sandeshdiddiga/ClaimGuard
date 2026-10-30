@@ -39,3 +39,6 @@ web/dist/
 .coverage.*
 htmlcov/
 .claude/
+
+# Demo recordings
+demo/
