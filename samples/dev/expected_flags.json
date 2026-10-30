@@ -1,0 +1,160 @@
+{
+  "sample_id": "dev",
+  "description": "Insured colonoscopy: the bill asks for 1,050.00 more than the EOB says the patient owes",
+  "patient_type": "insured",
+  "facility_name": "Riverbend Community Hospital",
+  "bill_date": "2026-10-12",
+  "payer": "Bluestone Health PPO (sample plan)",
+  "amount_due": "1460.00",
+  "gfe_total": null,
+  "eob": {
+    "insurer": "Bluestone Health PPO (sample plan)",
+    "billed": "3244.00",
+    "allowed": "1460.00",
+    "plan_paid": "1050.00",
+    "patient_responsibility": "410.00"
+  },
+  "lines": [
+    {
+      "service_date": "2026-09-30",
+      "code": "G0121",
+      "modifier": null,
+      "description": "Rev 0750 Screening colonoscopy, average risk",
+      "units": 1,
+      "charge": "2800.00",
+      "dose_value": null,
+      "dose_unit": null
+    },
+    {
+      "service_date": "2026-09-30",
+      "code": "J2704",
+      "modifier": null,
+      "description": "Rev 0636 Propofol inj 200 mg",
+      "units": 20,
+      "charge": "110.00",
+      "dose_value": "200",
+      "dose_unit": "MG"
+    },
+    {
+      "service_date": "2026-09-30",
+      "code": "J2405",
+      "modifier": null,
+      "description": "Rev 0636 Ondansetron inj 4 mg",
+      "units": 8,
+      "charge": "192.00",
+      "dose_value": "4",
+      "dose_unit": "MG"
+    },
+    {
+      "service_date": "2026-09-30",
+      "code": "J7120",
+      "modifier": null,
+      "description": "Rev 0258 Lactated Ringer's IV 1000 mL",
+      "units": 1,
+      "charge": "142.00",
+      "dose_value": "1000",
+      "dose_unit": "ML"
+    }
+  ],
+  "flags": [
+    {
+      "check": "eob",
+      "level": "red",
+      "codes": [],
+      "line_numbers": [],
+      "dollars_at_stake": "1050.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": "1460.00",
+      "patient_responsibility": "410.00",
+      "multiple": null,
+      "code_status": null
+    },
+    {
+      "check": "dose",
+      "level": "red",
+      "codes": [
+        "J2405"
+      ],
+      "line_numbers": [
+        3
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": 4,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": null,
+      "code_status": null
+    },
+    {
+      "check": "drug_benchmark",
+      "level": "grey",
+      "codes": [
+        "J2704"
+      ],
+      "line_numbers": [
+        2
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": "59.1",
+      "code_status": null
+    },
+    {
+      "check": "drug_benchmark",
+      "level": "grey",
+      "codes": [
+        "J7120"
+      ],
+      "line_numbers": [
+        4
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": "59.9",
+      "code_status": null
+    },
+    {
+      "check": "code",
+      "level": "grey",
+      "codes": [
+        "G0121"
+      ],
+      "line_numbers": [
+        1
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": null,
+      "code_status": "valid_no_rate"
+    }
+  ],
+  "likely_error_total": "1050.00",
+  "gfe_overage": null,
+  "deadline": null
+}

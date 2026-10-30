@@ -1,0 +1,38 @@
+[project]
+name = "claimguard"
+version = "0.1.0"
+description = "Checks itemized medical bills against public CMS rules and drafts dispute letters."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "python-multipart>=0.0.9",
+    "openai>=1.50",
+    "pydantic>=2.8",
+    "python-dotenv>=1.0",
+    "httpx>=0.27",
+    "jinja2>=3.1",
+    "pdfplumber>=0.11",
+    "pillow>=10.4",
+    "weasyprint>=62",
+    "tavily-python>=0.5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "reportlab>=4.2",   # sample PDFs only
+    "pandas>=2.2",      # CMS ingestion only
+    "openpyxl>=3.1",    # CMS ships some files as .xlsx
+    "pytest-cov>=7.1.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: calls Nebius Token Factory; run with -m live"]
+addopts = "-m 'not live'"

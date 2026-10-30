@@ -1,0 +1,9 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<table>
+  <tr><td>Balance on your bill</td><td class="money">{{ billed|money }}</td></tr>
+  <tr><td>Patient responsibility on my insurer's EOB</td><td class="money">{{ owed|money }}</td></tr>
+  <tr><td>Difference</td><td class="money">{{ difference|money }}</td></tr>
+</table>
+<p>I am asking you to rebill the correct amount and send me a corrected statement. I have attached the Explanation of Benefits.</p>
+{% endblock %}

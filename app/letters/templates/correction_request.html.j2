@@ -1,0 +1,20 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<p>These lines on my itemized bill need a second look. Each is listed with the reason, the units billed and the source of the figure.</p>
+{% for item in items %}
+<p><strong>{{ item.reason }}</strong>{% if item.review_note %} {{ item.review_note }}{% endif %}{% if item.amount %} The amount in question is {{ item.amount|money }}.{% endif %}</p>
+<table>
+  <tr><th>Line</th><th>Date of service</th><th>Code</th><th>Description</th><th class="money">Units</th><th class="money">Charge</th></tr>
+  {% for line in item.lines %}
+  <tr><td>{{ line.number }}</td><td>{{ line.date }}</td><td>{{ line.code }}</td><td>{{ line.description }}</td><td class="money">{{ line.units }}</td><td class="money">{{ line.charge|money }}</td></tr>
+  {% endfor %}
+</table>
+{% if item.source %}<p class="source">Source: {{ item.source }} ({{ item.source_url }})</p>{% endif %}
+{% endfor %}
+<p>I am asking for:</p>
+<ol>
+  <li>A corrected itemized bill, or a written explanation of why each line above is correct.</li>
+  <li>A billing hold on this account, with no collection activity, while the review is open.</li>
+</ol>
+<p>Please reply in writing to the address on file.</p>
+{% endblock %}

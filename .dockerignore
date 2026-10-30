@@ -1,0 +1,32 @@
+# Never in the image: raw CMS downloads, state databases, secrets, and anything not needed to run.
+# The one database that ships is data/claimguard.db: CMS public-use Level II reference tables, no patient data.
+data/*
+!data/claimguard.db
+Data/*
+!Data/claimguard.db
+*.db
+!data/claimguard.db
+!Data/claimguard.db
+*.sqlite
+*.sqlite3
+.env
+.env.*
+.git
+.github
+.claude
+.venv
+.pytest_cache
+.coverage
+**/__pycache__
+**/*.pyc
+**/.DS_Store
+tests
+docs
+eval
+ingest
+scripts
+node_modules
+web/node_modules
+web/dist
+Dockerfile
+render.yaml

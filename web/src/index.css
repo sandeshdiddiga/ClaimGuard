@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* A careful reviewer's notes on a paper bill: off-white paper, near-black ink, one blue for actions, and three
+   muted status colours that always come with a word and an icon. Every pair below meets WCAG 2.2 AA. */
+@theme {
+  --font-sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+  --color-paper: #f6f3ea;
+  --color-sheet: #fffdf8;
+  --color-ink: #1d1b18;
+  --color-ink-soft: #4c473f;
+  --color-rule: #d9d2c3;
+  --color-rule-strong: #857c6d;  /* form control borders: 3:1 or more on every surface */
+
+  --color-accent: #1f4e8c;
+  --color-accent-strong: #163a69;
+  --color-accent-wash: #e7eef7;
+
+  --color-err: #8a1c17;
+  --color-err-bg: #f8e9e5;
+  --color-err-line: #d4a094;
+
+  --color-ask: #744600;
+  --color-ask-bg: #fbf1dd;
+  --color-ask-line: #d7b066;
+
+  --color-ctx: #3b5165;
+  --color-ctx-bg: #edf2f6;
+  --color-ctx-line: #b3c3d0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+h1, h2, h3 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+
+.num { font-variant-numeric: tabular-nums; }
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* Headings take focus programmatically when a screen opens; they are not controls, so no ring. */
+[tabindex="-1"]:focus-visible { outline: none; }
+
+/* The letter preview: the server's letter body, set like a printed letter. */
+.letter { font-family: var(--font-serif); font-size: 1.0625rem; line-height: 1.6; overflow-wrap: break-word; }
+.letter th, .letter td:nth-child(-n+3) { white-space: nowrap; }
+.letter > * + * { margin-top: 0.85em; }
+.letter h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin-top: 1.25em; }
+.letter .meta p { margin: 0; }
+.letter table { width: 100%; border-collapse: collapse; font-family: var(--font-sans); font-size: 0.875rem; font-variant-numeric: tabular-nums; }
+.letter th, .letter td { border-bottom: 1px solid var(--color-rule); padding: 0.35rem 0.5rem 0.35rem 0; text-align: left; vertical-align: top; }
+.letter th.money, .letter td.money { text-align: right; padding-right: 0; padding-left: 0.75rem; white-space: nowrap; }
+.letter ol, .letter ul { padding-left: 1.4em; list-style: revert; }
+.letter li + li { margin-top: 0.3em; }
+.letter .source, .letter .footer { font-family: var(--font-sans); font-size: 0.875rem; color: var(--color-ink-soft); }
+.letter mark { background: var(--color-ask-bg); color: var(--color-ask); border-radius: 2px; padding: 0 0.2em; }
+/* On a phone each bill row reads as one line: "Line 2 · 2026-09-14 · J2250 · description · 2 · $68.00". */
+@media (max-width: 40rem) {
+  .letter table, .letter tbody, .letter tr { display: block; }
+  .letter tr:first-child { display: none; }
+  .letter tr { border-bottom: 1px solid var(--color-rule); padding: 0.45rem 0; }
+  .letter td { display: inline; border: 0; padding: 0; text-align: left !important; white-space: normal; }
+  .letter td:first-child::before { content: "Line "; }
+  .letter td + td::before { content: " · "; color: var(--color-ink-soft); }
+  .letter td:nth-child(5)::after { content: " units"; }
+}
+
+/* <details> keeps its native semantics; only the marker is ours. */
+summary { list-style: none; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+details[open] > summary .chev { transform: rotate(180deg); }
+.chev { transition-property: transform; transition-duration: 150ms; transition-timing-function: ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}

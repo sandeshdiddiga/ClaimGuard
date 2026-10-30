@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ title }}</title>
+<style>
+  @page { size: Letter; margin: 22mm 20mm; }
+  body { font-family: Helvetica, Arial, sans-serif; font-size: 11pt; line-height: 1.45; color: #111; }
+  h1 { font-size: 15pt; margin: 0 0 12pt; }
+  table { width: 100%; border-collapse: collapse; margin: 6pt 0 12pt; font-size: 10pt; }
+  th, td { border-bottom: 1px solid #bbb; padding: 4pt 6pt; text-align: left; vertical-align: top; }
+  td.money, th.money { text-align: right; }
+  .meta p { margin: 0; }
+  .source { font-size: 9pt; color: #444; margin-top: -6pt; }
+  .footer { margin-top: 24pt; font-size: 9.5pt; color: #444; }
+</style>
+</head>
+<body>
+<div class="meta">
+  <p>To: {{ recipient }}</p>
+  <p>{{ recipient_address }}</p>
+  <p>Date: [date]</p>
+  <p>Patient: [your name]</p>
+  <p>Account number: [account number]</p>
+</div>
+<h1>{{ title }}</h1>
+<p>{{ paragraph }}</p>
+{% block body %}{% endblock %}
+<p>Sincerely,<br>[your name]</p>
+<p class="footer">{{ footer }}</p>
+</body>
+</html>

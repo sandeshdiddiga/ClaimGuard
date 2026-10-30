@@ -1,0 +1,462 @@
+{
+ "mode": "routed",
+ "finished_at": "2026-10-30T13:18:49Z",
+ "models": {
+  "read_document": "nvidia/Nemotron-3.5-Super-VL",
+  "clean_codes": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+  "judge_amber": "nvidia/Nemotron-3-Ultra-550b-a55b",
+  "explain": "nvidia/nemotron-3-super-120b-a12b",
+  "draft_letter": "nvidia/nemotron-3-super-120b-a12b",
+  "pick_links": "nvidia/nemotron-3-super-120b-a12b"
+ },
+ "prices": {
+  "nvidia/Nemotron-3.5-Super-VL": {
+   "input": "0.30",
+   "output": "0.90"
+  },
+  "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B": {
+   "input": "0.06",
+   "output": "0.24"
+  },
+  "nvidia/Nemotron-3-Ultra-550b-a55b": {
+   "input": "1.00",
+   "output": "3.00"
+  },
+  "nvidia/nemotron-3-super-120b-a12b": {
+   "input": "0.30",
+   "output": "0.90"
+  }
+ },
+ "price_source": "Nebius Token Factory GET /v1/models, pricing.prompt and pricing.completion, read 2026-10-30",
+ "notes": [],
+ "samples": [
+  {
+   "name": "maya",
+   "sample_id": "maya",
+   "document": "bill.pdf",
+   "wall_seconds": 26.8,
+   "lines_expected": 8,
+   "lines_read": 8,
+   "extraction": {
+    "service_date": {
+     "ok": 8,
+     "total": 8
+    },
+    "code": {
+     "ok": 8,
+     "total": 8
+    },
+    "modifier": {
+     "ok": 8,
+     "total": 8
+    },
+    "description": {
+     "ok": 8,
+     "total": 8
+    },
+    "units": {
+     "ok": 8,
+     "total": 8
+    },
+    "charge": {
+     "ok": 8,
+     "total": 8
+    },
+    "dose_value": {
+     "ok": 8,
+     "total": 8
+    },
+    "dose_unit": {
+     "ok": 8,
+     "total": 8
+    },
+    "facility_name": {
+     "ok": 1,
+     "total": 1
+    },
+    "bill_date": {
+     "ok": 1,
+     "total": 1
+    },
+    "amount_due": {
+     "ok": 1,
+     "total": 1
+    }
+   },
+   "findings": {
+    "expected_errors": 5,
+    "caught": 5,
+    "downgraded": 0,
+    "missed": [],
+    "false_likely": [],
+    "unexpected": [],
+    "context_expected": 6,
+    "context_found": 6,
+    "expected_total": "3858.00",
+    "actual_total": "3858.00",
+    "total_ok": true,
+    "deadline_ok": true
+   },
+   "calls": [
+    {
+     "step": "read_document",
+     "model": "nvidia/Nemotron-3.5-Super-VL",
+     "latency_ms": 7849,
+     "prompt_tokens": 2844,
+     "completion_tokens": 2580,
+     "ok": true
+    },
+    {
+     "step": "clean_codes",
+     "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+     "latency_ms": 7685,
+     "prompt_tokens": 901,
+     "completion_tokens": 1682,
+     "ok": true
+    },
+    {
+     "step": "judge_amber",
+     "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+     "latency_ms": 1887,
+     "prompt_tokens": 333,
+     "completion_tokens": 423,
+     "ok": true
+    },
+    {
+     "step": "draft_letter",
+     "model": "nvidia/nemotron-3-super-120b-a12b",
+     "latency_ms": 7052,
+     "prompt_tokens": 509,
+     "completion_tokens": 1132,
+     "ok": true
+    },
+    {
+     "step": "draft_letter",
+     "model": "nvidia/nemotron-3-super-120b-a12b",
+     "latency_ms": 2224,
+     "prompt_tokens": 247,
+     "completion_tokens": 425,
+     "ok": true
+    }
+   ],
+   "letters": 2,
+   "error": null
+  },
+  {
+   "name": "maya-photo",
+   "sample_id": "maya",
+   "document": "bill_photo.jpg",
+   "wall_seconds": 34.9,
+   "lines_expected": 8,
+   "lines_read": 8,
+   "extraction": {
+    "service_date": {
+     "ok": 8,
+     "total": 8
+    },
+    "code": {
+     "ok": 8,
+     "total": 8
+    },
+    "modifier": {
+     "ok": 8,
+     "total": 8
+    },
+    "description": {
+     "ok": 8,
+     "total": 8
+    },
+    "units": {
+     "ok": 8,
+     "total": 8
+    },
+    "charge": {
+     "ok": 8,
+     "total": 8
+    },
+    "dose_value": {
+     "ok": 8,
+     "total": 8
+    },
+    "dose_unit": {
+     "ok": 8,
+     "total": 8
+    },
+    "facility_name": {
+     "ok": 1,
+     "total": 1
+    },
+    "bill_date": {
+     "ok": 1,
+     "total": 1
+    },
+    "amount_due": {
+     "ok": 1,
+     "total": 1
+    }
+   },
+   "findings": {
+    "expected_errors": 5,
+    "caught": 5,
+    "downgraded": 0,
+    "missed": [],
+    "false_likely": [],
+    "unexpected": [],
+    "context_expected": 6,
+    "context_found": 6,
+    "expected_total": "3858.00",
+    "actual_total": "3858.00",
+    "total_ok": true,
+    "deadline_ok": true
+   },
+   "calls": [
+    {
+     "step": "read_document",
+     "model": "nvidia/Nemotron-3.5-Super-VL",
+     "latency_ms": 7862,
+     "prompt_tokens": 2117,
+     "completion_tokens": 2581,
+     "ok": true
+    },
+    {
+     "step": "clean_codes",
+     "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+     "latency_ms": 16942,
+     "prompt_tokens": 901,
+     "completion_tokens": 2098,
+     "ok": true
+    },
+    {
+     "step": "judge_amber",
+     "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+     "latency_ms": 1832,
+     "prompt_tokens": 333,
+     "completion_tokens": 443,
+     "ok": true
+    },
+    {
+     "step": "draft_letter",
+     "model": "nvidia/nemotron-3-super-120b-a12b",
+     "latency_ms": 6035,
+     "prompt_tokens": 509,
+     "completion_tokens": 956,
+     "ok": true
+    },
+    {
+     "step": "draft_letter",
+     "model": "nvidia/nemotron-3-super-120b-a12b",
+     "latency_ms": 2080,
+     "prompt_tokens": 247,
+     "completion_tokens": 503,
+     "ok": true
+    }
+   ],
+   "letters": 2,
+   "error": null
+  },
+  {
+   "name": "dev",
+   "sample_id": "dev",
+   "document": "bill.pdf",
+   "wall_seconds": 25.1,
+   "lines_expected": 4,
+   "lines_read": 4,
+   "extraction": {
+    "service_date": {
+     "ok": 4,
+     "total": 4
+    },
+    "code": {
+     "ok": 4,
+     "total": 4
+    },
+    "modifier": {
+     "ok": 4,
+     "total": 4
+    },
+    "description": {
+     "ok": 4,
+     "total": 4
+    },
+    "units": {
+     "ok": 4,
+     "total": 4
+    },
+    "charge": {
+     "ok": 4,
+     "total": 4
+    },
+    "dose_value": {
+     "ok": 4,
+     "total": 4
+    },
+    "dose_unit": {
+     "ok": 4,
+     "total": 4
+    },
+    "facility_name": {
+     "ok": 1,
+     "total": 1
+    },
+    "bill_date": {
+     "ok": 1,
+     "total": 1
+    },
+    "amount_due": {
+     "ok": 1,
+     "total": 1
+    },
+    "eob_billed": {
+     "ok": 1,
+     "total": 1
+    },
+    "eob_allowed": {
+     "ok": 1,
+     "total": 1
+    },
+    "eob_patient_responsibility": {
+     "ok": 1,
+     "total": 1
+    }
+   },
+   "findings": {
+    "expected_errors": 2,
+    "caught": 2,
+    "downgraded": 0,
+    "missed": [],
+    "false_likely": [],
+    "unexpected": [],
+    "context_expected": 3,
+    "context_found": 3,
+    "expected_total": "1050.00",
+    "actual_total": "1050.00",
+    "total_ok": true,
+    "deadline_ok": true
+   },
+   "calls": [
+    {
+     "step": "read_document",
+     "model": "nvidia/Nemotron-3.5-Super-VL",
+     "latency_ms": 7521,
+     "prompt_tokens": 2844,
+     "completion_tokens": 1704,
+     "ok": true
+    },
+    {
+     "step": "clean_codes",
+     "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+     "latency_ms": 10818,
+     "prompt_tokens": 756,
+     "completion_tokens": 1111,
+     "ok": true
+    },
+    {
+     "step": "read_document",
+     "model": "nvidia/Nemotron-3.5-Super-VL",
+     "latency_ms": 3796,
+     "prompt_tokens": 2379,
+     "completion_tokens": 1070,
+     "ok": true
+    },
+    {
+     "step": "draft_letter",
+     "model": "nvidia/nemotron-3-super-120b-a12b",
+     "latency_ms": 2854,
+     "prompt_tokens": 223,
+     "completion_tokens": 443,
+     "ok": true
+    }
+   ],
+   "letters": 1,
+   "error": null
+  },
+  {
+   "name": "clean",
+   "sample_id": "clean",
+   "document": "bill.pdf",
+   "wall_seconds": 30.2,
+   "lines_expected": 5,
+   "lines_read": 5,
+   "extraction": {
+    "service_date": {
+     "ok": 5,
+     "total": 5
+    },
+    "code": {
+     "ok": 5,
+     "total": 5
+    },
+    "modifier": {
+     "ok": 5,
+     "total": 5
+    },
+    "description": {
+     "ok": 5,
+     "total": 5
+    },
+    "units": {
+     "ok": 5,
+     "total": 5
+    },
+    "charge": {
+     "ok": 5,
+     "total": 5
+    },
+    "dose_value": {
+     "ok": 5,
+     "total": 5
+    },
+    "dose_unit": {
+     "ok": 5,
+     "total": 5
+    },
+    "facility_name": {
+     "ok": 1,
+     "total": 1
+    },
+    "bill_date": {
+     "ok": 1,
+     "total": 1
+    },
+    "amount_due": {
+     "ok": 1,
+     "total": 1
+    }
+   },
+   "findings": {
+    "expected_errors": 0,
+    "caught": 0,
+    "downgraded": 0,
+    "missed": [],
+    "false_likely": [],
+    "unexpected": [],
+    "context_expected": 5,
+    "context_found": 5,
+    "expected_total": "0.00",
+    "actual_total": "0.00",
+    "total_ok": true,
+    "deadline_ok": true
+   },
+   "calls": [
+    {
+     "step": "read_document",
+     "model": "nvidia/Nemotron-3.5-Super-VL",
+     "latency_ms": 9980,
+     "prompt_tokens": 2844,
+     "completion_tokens": 2677,
+     "ok": true
+    },
+    {
+     "step": "clean_codes",
+     "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+     "latency_ms": 20158,
+     "prompt_tokens": 792,
+     "completion_tokens": 1291,
+     "ok": true
+    }
+   ],
+   "letters": 0,
+   "error": null
+  }
+ ]
+}

@@ -1,0 +1,168 @@
+{
+  "sample_id": "clean",
+  "description": "Self-pay control bill: no likely errors; $339.50 over the estimate is under the $400 threshold",
+  "patient_type": "self_pay",
+  "facility_name": "Riverbend Community Hospital",
+  "bill_date": "2026-10-08",
+  "payer": "Self-pay (no insurance)",
+  "amount_due": "3089.50",
+  "gfe_total": "2750.00",
+  "eob": null,
+  "lines": [
+    {
+      "service_date": "2026-09-22",
+      "code": "G0121",
+      "modifier": null,
+      "description": "Rev 0750 Screening colonoscopy, average risk",
+      "units": 1,
+      "charge": "2800.00",
+      "dose_value": null,
+      "dose_unit": null
+    },
+    {
+      "service_date": "2026-09-22",
+      "code": "J2250",
+      "modifier": null,
+      "description": "Rev 0636 Midazolam HCl inj 2 mg",
+      "units": 2,
+      "charge": "68.00",
+      "dose_value": "2",
+      "dose_unit": "MG"
+    },
+    {
+      "service_date": "2026-09-22",
+      "code": "J3010",
+      "modifier": null,
+      "description": "Rev 0636 Fentanyl citrate inj 100 mcg",
+      "units": 1,
+      "charge": "54.00",
+      "dose_value": "100",
+      "dose_unit": "MCG"
+    },
+    {
+      "service_date": "2026-09-22",
+      "code": "J7120",
+      "modifier": null,
+      "description": "Rev 0258 Lactated Ringer's IV 1000 mL",
+      "units": 1,
+      "charge": "142.00",
+      "dose_value": "1000",
+      "dose_unit": "ML"
+    },
+    {
+      "service_date": "2026-09-22",
+      "code": "A4216",
+      "modifier": null,
+      "description": "Rev 0270 Saline flush syringe 10 mL",
+      "units": 3,
+      "charge": "25.50",
+      "dose_value": "10",
+      "dose_unit": "ML"
+    }
+  ],
+  "flags": [
+    {
+      "check": "drug_benchmark",
+      "level": "grey",
+      "codes": [
+        "J2250"
+      ],
+      "line_numbers": [
+        2
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": "203.6",
+      "code_status": null
+    },
+    {
+      "check": "drug_benchmark",
+      "level": "grey",
+      "codes": [
+        "J3010"
+      ],
+      "line_numbers": [
+        3
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": "39.6",
+      "code_status": null
+    },
+    {
+      "check": "drug_benchmark",
+      "level": "grey",
+      "codes": [
+        "J7120"
+      ],
+      "line_numbers": [
+        4
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": "59.9",
+      "code_status": null
+    },
+    {
+      "check": "code",
+      "level": "grey",
+      "codes": [
+        "G0121"
+      ],
+      "line_numbers": [
+        1
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": null,
+      "code_status": "valid_no_rate"
+    },
+    {
+      "check": "code",
+      "level": "grey",
+      "codes": [
+        "A4216"
+      ],
+      "line_numbers": [
+        5
+      ],
+      "dollars_at_stake": "0.00",
+      "expected_units": null,
+      "mue_value": null,
+      "mai": null,
+      "overage": null,
+      "deadline": null,
+      "amount_billed": null,
+      "patient_responsibility": null,
+      "multiple": null,
+      "code_status": "valid_no_rate"
+    }
+  ],
+  "likely_error_total": "0.00",
+  "gfe_overage": null,
+  "deadline": null
+}

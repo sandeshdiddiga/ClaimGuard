@@ -1,0 +1,17 @@
+# Render Blueprint (https://render.com/docs/blueprint-spec). Secrets are entered in the Render dashboard when
+# the Blueprint is first created, never in this file.
+services:
+  - type: web
+    name: claimguard
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NEBIUS_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY # optional: leave it empty and the hospital lookup is switched off
+        sync: false
